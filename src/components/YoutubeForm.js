@@ -115,13 +115,16 @@ const YoutubeForm = () => {
               const { phNumbers } = values;
 
               return (
-                <div className="from-control">
+                <div>
                   {phNumbers.map((phNumber, index) => (
                     <div key={index}>
                       <Field type="text" name={`phNumbers[${index}]`} />
-                      <button type="button" onClick={() => remove(index)}>
-                        -
-                      </button>
+                      {index > 0 && (
+                        <button type="button" onClick={() => remove(index)}>
+                          -
+                        </button>
+                      )}
+
                       <button type="button" onClick={() => push('')}>
                         +
                       </button>
